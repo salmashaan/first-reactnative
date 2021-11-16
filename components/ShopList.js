@@ -7,18 +7,18 @@ import { Button } from "native-base";
 
 const ShopList = ({ navigation }) => {
   const shopList = shopStore.shops.map((shop) => (
-    <ShopItem shop={shop} key={shop._id} />
+    <ShopItem shop={shop} navigation={navigation} key={shop._id} />
   ));
   return (
     <View>
       {shopList}
-      <Button
+      {/* <Button
         onPress={() => {
           navigation.navigate("ShopDetail");
         }}
       >
         Go to Shop Detail
-      </Button>
+      </Button> */}
     </View>
   );
 };

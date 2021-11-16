@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import styles from "../styles";
 import { Spinner } from "native-base";
 import { observer } from "mobx-react";
+import { baseURL } from "../stores/instance";
+import ProductList from "../components/ProductList";
 
 const ShopDetail = () => {
   if (shopStore.loading) return <Spinner />;
@@ -16,7 +18,7 @@ const ShopDetail = () => {
         source={{ uri: baseURL + shop.image }}
       />
       <Text style={styles.shopDetailTitle}>{shop.name}</Text>
-      <ProductsList products={shop.products} />
+      <ProductList products={shop.products} />
     </View>
   );
 };

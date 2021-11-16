@@ -8,7 +8,7 @@ const ShopItem = ({ shop, navigation }) => {
     <Pressable
       onPress={() => {
         navigation.navigate("ShopDetail", { shop: shop });
-        console.log("clcik");
+        console.log("click");
       }}
     >
       <HStack w="100%" alignItems="center" space="3">
@@ -19,7 +19,7 @@ const ShopItem = ({ shop, navigation }) => {
           alt="image"
           style={{ width: 100, height: 100 }}
         />
-        <Text>{shop.name}</Text>
+        <Text> {shop.name}</Text>
       </HStack>
     </Pressable>
   );
