@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { baseURL } from "../stores/instance";
 
 const ProductItem = ({ product }) => {
   return (

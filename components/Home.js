@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, Alert, StyleSheet } from "react-native";
 import { Button } from "native-base";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View
       style={{
@@ -16,10 +16,10 @@ const Home = () => {
       </Text>
       <Button
         onPress={() => {
-          Alert.alert("Shops");
+          navigation.navigate("ShopList");
         }}
       >
-        Visit shops
+        Go to Shops
       </Button>
     </View>
   );

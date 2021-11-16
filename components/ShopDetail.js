@@ -1,9 +1,13 @@
 import React from "react";
 import shopStore from "../stores/shopStore";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
+import styles from "../styles";
+import { Spinner } from "native-base";
+import { observer } from "mobx-react";
 
 const ShopDetail = () => {
-  const shop = shopStore.shops[0];
+  if (shopStore.loading) return <Spinner />;
+  const shop = shopStore.shops[1];
 
   return (
     <View style={styles.shopDetailWrapper}>
@@ -17,18 +21,4 @@ const ShopDetail = () => {
   );
 };
 
-export default ShopDetail;
-
-const styles = StyleSheet.create({
-  shopDetailWrapper: {
-    marginTop: 50,
-  },
-  shopDetailImage: {
-    width: 150,
-    height: 150,
-  },
-  shopDetailTitle: {
-    fontWeight: "bold",
-    fontSize: 40,
-  },
-});
+export default observer(ShopDetail);
