@@ -7,9 +7,9 @@ import { observer } from "mobx-react";
 import { baseURL } from "../stores/instance";
 import ProductList from "../components/ProductList";
 
-const ShopDetail = () => {
+const ShopDetail = ({ navigation, route }) => {
   if (shopStore.loading) return <Spinner />;
-  const shop = shopStore.shops[1];
+  const shop = route.params.shop;
 
   return (
     <View style={styles.shopDetailWrapper}>
