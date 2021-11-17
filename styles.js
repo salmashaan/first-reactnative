@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 40,
   },
+  cartButton: { marginRight: 10, color: "navy" },
 });
 
 export default styles;
