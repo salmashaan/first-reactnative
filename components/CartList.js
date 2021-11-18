@@ -1,8 +1,9 @@
-import { HStack, Center } from "native-base";
+import { HStack, Center, Button } from "native-base";
 import React from "react";
 import { View, Text } from "react-native";
 import CartItem from "./CartItem";
 import cartStore from "../stores/cartStore";
+import { observer } from "mobx-react";
 
 function CartList() {
   const cartList = cartStore.items.map((item) => (
@@ -11,8 +12,9 @@ function CartList() {
   return (
     <View>
       <Text>{cartList}</Text>
+      <Button onPress={cartStore.checkout}> Checkout </Button>
     </View>
   );
 }
 
-export default CartList;
+export default observer(CartList);

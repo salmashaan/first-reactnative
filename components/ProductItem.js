@@ -7,11 +7,11 @@ import cartStore from "../stores/cartStore";
 import { HStack, VStack } from "native-base";
 
 const ProductItem = ({ product }) => {
-  const [quantity, setQuantity] = useState[0];
+  const [quantity, setQuantity] = useState(0);
 
   const handleAdd = (value) => {
-    setQuantity(value);
     cartStore.addItemToCart(product, value);
+    setQuantity(value);
   };
 
   return (
@@ -24,8 +24,9 @@ const ProductItem = ({ product }) => {
           alt="image"
           style={{ width: 100, height: 100 }}
         />
-        <Text>{product.name}</Text>
         <VStack>
+          <Text>{product.name}</Text>
+
           <NumericInput
             minValue={1}
             value={quantity}
