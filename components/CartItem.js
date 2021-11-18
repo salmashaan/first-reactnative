@@ -37,7 +37,10 @@ const CartItem = ({ item }) => {
           value={quantity}
           onChange={(value) => handleAdd(value)}
         />
-        <Button onPress={() => cartStore.removeItemFromCart(product._id)}>
+        <Button
+          size="xs"
+          onPress={() => cartStore.removeItemFromCart(product._id)}
+        >
           {" "}
           Delete{" "}
         </Button>

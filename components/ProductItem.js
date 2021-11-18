@@ -4,14 +4,14 @@ import NumericInput from "react-native-numeric-input";
 import { baseURL } from "../stores/instance";
 import { useState } from "react";
 import cartStore from "../stores/cartStore";
-import { HStack, VStack } from "native-base";
+import { HStack, VStack, Button } from "native-base";
 
 const ProductItem = ({ product }) => {
   const [quantity, setQuantity] = useState(0);
 
-  const handleAdd = (value) => {
-    cartStore.addItemToCart(product, value);
-    setQuantity(value);
+  const handleAdd = () => {
+    cartStore.addItemToCart(product, quantity);
+    // setQuantity(value);
   };
 
   return (
@@ -30,8 +30,9 @@ const ProductItem = ({ product }) => {
           <NumericInput
             minValue={1}
             value={quantity}
-            onChange={(value) => handleAdd(value)}
+            onChange={(value) => setQuantity(value)}
           />
+          <Button onPress={handleAdd}>Add</Button>
         </VStack>
       </HStack>
     </View>
