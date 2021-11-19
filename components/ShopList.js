@@ -26,5 +26,3 @@ const ShopList = ({ navigation }) => {
 export default observer(ShopList);
 
 const styles = StyleSheet.create({});
-
-//hello
