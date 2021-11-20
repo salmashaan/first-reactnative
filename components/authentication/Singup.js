@@ -9,10 +9,11 @@ const Signup = ({ navigation }) => {
   const [user, setUser] = useState({
     username: "",
     password: "",
+    email: "",
   });
 
   const handleSubmit = async () => {
-    console.log(user);
+    // console.log(user);
     await authStore.signup(user, navigation);
   };
 
@@ -23,6 +24,11 @@ const Signup = ({ navigation }) => {
         onChangeText={(username) => setUser({ ...user, username })}
         style={styles.authTextInput}
         placeholder="Username"
+      />
+      <Text>Email ID</Text>
+      <TextInput
+        onChangeText={(email) => setUser({ ...user, email })}
+        placeholder={"Email"}
       />
       <TextInput
         onChangeText={(password) => setUser({ ...user, password })}
