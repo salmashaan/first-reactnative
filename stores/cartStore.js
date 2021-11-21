@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import { instance } from "./instance";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class CartStore {
   constructor() {

@@ -25,9 +25,9 @@ const Signup = ({ navigation }) => {
         style={styles.authTextInput}
         placeholder="Username"
       />
-      <Text>Email ID</Text>
       <TextInput
         onChangeText={(email) => setUser({ ...user, email })}
+        style={styles.authTextInput}
         placeholder={"Email"}
       />
       <TextInput
