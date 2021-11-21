@@ -12,7 +12,7 @@ import Signup from "../authentication/Singup";
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
   return (
-    <Navigator initialRouteName="Signup">
+    <Navigator initialRouteName="Home">
       <Screen name="Home" component={Home} />
       <Screen
         name="ShopList"
